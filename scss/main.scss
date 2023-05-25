@@ -1,8 +1,277 @@
-@import "hello";
-$font-stack: Helvetica, sans-serif;
-$primary-color: #333;
+@use "sass:map";
+
+@import "reset";
+@import "mediaQuery";
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
+
+$font-stack: "Be Vietnam Pro", Helvetica, sans-serif;
+$border-radius: 20px;
+
+$font-sizes: (
+  "h1": 38px,
+  "h2": 32px,
+  "text": 14px,
+);
+
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);
+
+$primary-colors: (
+  "red": hsl(12, 88%, 59%),
+  "blue": hsl(228, 39%, 23%),
+);
+
+$neutral-colors: (
+  "grayish-blue": hsl(227, 12%, 61%),
+  "dark-blue": hsl(233, 12%, 13%),
+  "pale-red": hsl(13, 100%, 96%),
+  "light-gray": hsl(0, 0%, 98%),
+);
 
 body {
   font: 100% $font-stack;
-  color: $primary-color;
+  color: map.get($neutral-colors, "grayish-blue");
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: map.get($font-sizes, "h1");
+}
+h2 {
+  font-size: map.get($font-sizes, "h2");
+}
+
+h3 {
+  font-size: map.get($font-sizes, "text");
+}
+p {
+  font-size: map.get($font-sizes, "text");
+}
+@mixin radiusPadding {
+  border-radius: $border-radius;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.btn {
+  @include radiusPadding;
+  margin: 20px;
+  font-weight: map.get($font-weights, "bold");
+  border: none;
+
+  &--primary {
+    color: map.get($neutral-colors, "light-gray");
+    background-color: map.get($primary-colors, "red");
+  }
+  &--secondary {
+    color: map.get($primary-colors, "red");
+    background-color: white;
+  }
+}
+
+header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  img {
+    justify-self: center;
+  }
+  nav {
+    display: none;
+  }
+  .nav-hamburger {
+    border: none;
+    background-color: initial;
+    background-image: url("../images/icon-hamburger.svg");
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.last-section {
+  background-repeat: no-repeat;
+  background-image: url("../images/bg-simplify-section-mobile.svg");
+  background-position: left center;
+  background-color: map.get($primary-colors, "red");
+  height: 400px;
+  padding-left: 28px;
+  padding-right: 28px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  h2 {
+    color: map.get($neutral-colors, "light-gray");
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: map.get($neutral-colors, "dark-blue");
+  font-weight: map.get($font-weights, "bold");
+}
+
+main {
+  img {
+    width: 100vw;
+  }
+  text-align: center;
+  p {
+    padding: 20px;
+    line-height: 1.5;
+  }
+  // background-repeat: no-repeat;
+  // background-image: url("../images/bg-tablet-pattern.svg");
+  // background-size: 90%;
+  // background-position: 600% bottom;
+  // height: 450px;
+}
+
+.differences-section {
+  div {
+    h2 {
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: center;
+    }
+    p {
+      padding: 16px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+      text-align: center;
+    }
+  }
+
+  ul {
+    li {
+      p {
+        padding: 12px;
+        margin-bottom: 24px;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+.list__title {
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: map.get($neutral-colors, "pale-red");
+  margin-left: 12px;
+
+  .list__number {
+    border-radius: $border-radius;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    font-weight: map.get($font-weights, "bold");
+    background-color: map.get($primary-colors, "red");
+    color: white;
+  }
+  h3 {
+    display: inline-block;
+    padding-left: 12px;
+  }
+}
+
+.feedbackCardsSection {
+  width: 100vw;
+  overflow: hidden;
+  text-align: center;
+  ul {
+    display: flex;
+    width: 400vw;
+    padding-top: 70px;
+    .card {
+      min-width: 90vw;
+      background-color: map.get($neutral-colors, "light-gray");
+      text-align: center;
+      margin: 24px;
+      padding: 24px;
+      position: relative;
+
+      .card__title {
+        margin: 26px;
+        margin-top: 36px;
+      }
+      .avatar {
+        width: 80px;
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        transform: translate(-50%, 90%);
+      }
+    }
+  }
+}
+
+footer {
+  background-color: map.get($neutral-colors, "dark-blue");
+  text-align: center;
+
+  .footer__inputBlock {
+    display: flex;
+    input {
+      @include radiusPadding;
+      align-self: center;
+      flex: 2;
+    }
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .footer__nav {
+    display: flex;
+    text-align: left;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .footer__anchorList {
+    flex: 1;
+    li {
+      margin: 12px;
+    }
+    a {
+      color: white;
+      font-size: 14px;
+    }
+  }
+  .logo {
+    margin-top: 12px;
+    .logo__text {
+      fill: map.get($neutral-colors, "light-gray");
+    }
+  }
+  .footer__copyrightInfo {
+    font-size: 12px;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .socialMediaList {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px;
+    .socialMediaList__siteIcon {
+      width: 26px;
+      height: 26px;
+    }
+  }
 }

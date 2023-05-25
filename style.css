@@ -1,10 +1,338 @@
-p {
-  font-size: 20px;
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+code,
+em,
+img,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+main,
+canvas,
+embed,
+footer,
+header,
+nav,
+section,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+footer,
+header,
+nav,
+section,
+main {
+  display: block;
 }
 
 body {
-  font: 100% Helvetica, sans-serif;
-  color: #333;
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+body {
+  font: 100% "Be Vietnam Pro", Helvetica, sans-serif;
+  color: hsl(227, 12%, 61%);
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+p {
+  font-size: 14px;
+}
+
+.btn {
+  border-radius: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: 20px;
+  font-weight: 700;
+  border: none;
+}
+.btn--primary {
+  color: hsl(0, 0%, 98%);
+  background-color: hsl(12, 88%, 59%);
+}
+.btn--secondary {
+  color: hsl(12, 88%, 59%);
+  background-color: white;
+}
+
+header {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+header img {
+  justify-self: center;
+}
+header nav {
+  display: none;
+}
+header .nav-hamburger {
+  border: none;
+  background-color: initial;
+  background-image: url("../images/icon-hamburger.svg");
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.last-section {
+  background-repeat: no-repeat;
+  background-image: url("../images/bg-simplify-section-mobile.svg");
+  background-position: left center;
+  background-color: hsl(12, 88%, 59%);
+  height: 400px;
+  padding-left: 28px;
+  padding-right: 28px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.last-section h2 {
+  color: hsl(0, 0%, 98%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: hsl(233, 12%, 13%);
+  font-weight: 700;
+}
+
+main {
+  text-align: center;
+}
+main img {
+  width: 100vw;
+}
+main p {
+  padding: 20px;
+  line-height: 1.5;
+}
+
+.differences-section div h2 {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+}
+.differences-section div p {
+  padding: 16px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+  text-align: center;
+}
+.differences-section ul li p {
+  padding: 12px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.list__title {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: hsl(13, 100%, 96%);
+  margin-left: 12px;
+}
+.list__title .list__number {
+  border-radius: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 24px;
+  padding-right: 24px;
+  font-weight: 700;
+  background-color: hsl(12, 88%, 59%);
+  color: white;
+}
+.list__title h3 {
+  display: inline-block;
+  padding-left: 12px;
+}
+
+.feedbackCardsSection {
+  width: 100vw;
+  overflow: hidden;
+  text-align: center;
+}
+.feedbackCardsSection ul {
+  display: flex;
+  width: 400vw;
+  padding-top: 70px;
+}
+.feedbackCardsSection ul .card {
+  min-width: 90vw;
+  background-color: hsl(0, 0%, 98%);
+  text-align: center;
+  margin: 24px;
+  padding: 24px;
+  position: relative;
+}
+.feedbackCardsSection ul .card .card__title {
+  margin: 26px;
+  margin-top: 36px;
+}
+.feedbackCardsSection ul .card .avatar {
+  width: 80px;
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, 90%);
+}
+
+footer {
+  background-color: hsl(233, 12%, 13%);
+  text-align: center;
+}
+footer .footer__inputBlock {
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+footer .footer__inputBlock input {
+  border-radius: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  align-self: center;
+  flex: 2;
+}
+footer .footer__nav {
+  display: flex;
+  text-align: left;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+footer .footer__anchorList {
+  flex: 1;
+}
+footer .footer__anchorList li {
+  margin: 12px;
+}
+footer .footer__anchorList a {
+  color: white;
+  font-size: 14px;
+}
+footer .logo {
+  margin-top: 12px;
+}
+footer .logo .logo__text {
+  fill: hsl(0, 0%, 98%);
+}
+footer .footer__copyrightInfo {
+  font-size: 12px;
+  text-align: center;
+  padding: 30px;
+}
+footer .socialMediaList {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px;
+}
+footer .socialMediaList .socialMediaList__siteIcon {
+  width: 26px;
+  height: 26px;
 }
 
 /*# sourceMappingURL=style.css.map */
