@@ -1,0 +1,48 @@
+@use "sass:map";
+@use "colorPalette" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
+
+$font-stack: "Be Vietnam Pro", Helvetica, sans-serif;
+
+$font-sizes: (
+  "h1": 38px,
+  "h2": 32px,
+  "h3": 16px,
+  "text": 14px,
+);
+
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+);
+
+// default font and color
+
+h1 {
+  font-size: map.get($font-sizes, "h1");
+}
+h2 {
+  font-size: map.get($font-sizes, "h2");
+}
+
+h3 {
+  font-size: map.get($font-sizes, "h3");
+}
+p {
+  font-size: map.get($font-sizes, "text");
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: map.get($neutral-colors, "dark-blue");
+  font-weight: map.get($font-weights, "bold");
+}
+
+body {
+  font: 100% $font-stack;
+  color: map.get($neutral-colors, "grayish-blue");
+}

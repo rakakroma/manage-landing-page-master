@@ -1,58 +1,14 @@
 @use "sass:map";
+@use "colorPalette" as *;
+@use "font" as *;
 
 @import "reset";
 @import "mediaQuery";
-@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
+@import "swiper";
+@import "font";
 
-$font-stack: "Be Vietnam Pro", Helvetica, sans-serif;
 $border-radius: 20px;
 
-$font-sizes: (
-  "h1": 38px,
-  "h2": 32px,
-  "text": 14px,
-);
-
-$font-weights: (
-  "regular": 400,
-  "medium": 500,
-  "bold": 700,
-);
-
-$primary-colors: (
-  "red": hsl(12, 88%, 59%),
-  "blue": hsl(228, 39%, 23%),
-);
-
-$neutral-colors: (
-  "grayish-blue": hsl(227, 12%, 61%),
-  "dark-blue": hsl(233, 12%, 13%),
-  "pale-red": hsl(13, 100%, 96%),
-  "light-gray": hsl(0, 0%, 98%),
-);
-
-body {
-  font: 100% $font-stack;
-  color: map.get($neutral-colors, "grayish-blue");
-}
-
-a {
-  text-decoration: none;
-}
-
-h1 {
-  font-size: map.get($font-sizes, "h1");
-}
-h2 {
-  font-size: map.get($font-sizes, "h2");
-}
-
-h3 {
-  font-size: map.get($font-sizes, "text");
-}
-p {
-  font-size: map.get($font-sizes, "text");
-}
 @mixin radiusPadding {
   border-radius: $border-radius;
   padding-left: 30px;
@@ -63,7 +19,10 @@ p {
 
 .btn {
   @include radiusPadding;
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
   font-weight: map.get($font-weights, "bold");
   border: none;
 
@@ -77,19 +36,78 @@ p {
   }
 }
 
-header {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 20px;
-  margin-right: 20px;
+.popup-background {
+  z-index: 100;
+  background: linear-gradient(
+    0deg,
+    rgba(45, 45, 45, 1) 0%,
+    rgba(122, 122, 122, 1) 35%,
+    rgba(221, 221, 221, 1) 100%
+  );
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  visibility: hidden;
+  &--active {
+    visibility: visible;
+  }
+}
+.header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
   justify-content: space-between;
+  position: relative;
   img {
     justify-self: center;
   }
-  nav {
+  a {
+    color: map.get($primary-colors, "blue");
+    font-weight: map.get($font-weights, "bold");
+    font-size: map.get($font-sizes, "h3");
+  }
+
+  &__nav {
     display: none;
   }
+
+  .btn {
+    z-index: 150;
+  }
+  &--expanded {
+    .header__nav {
+      display: flex;
+      background-color: white;
+      text-align: center;
+      justify-content: center;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100vw - 50px);
+      height: 40vh;
+      border-radius: 4px;
+      padding-top: 12px;
+      padding-bottom: 30px;
+      z-index: 200;
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .btn {
+        display: none;
+      }
+      li {
+        margin-top: 2rem;
+      }
+    }
+  }
+
   .nav-hamburger {
     border: none;
     background-color: initial;
@@ -98,6 +116,10 @@ header {
     height: 24px;
     background-repeat: no-repeat;
     background-size: contain;
+
+    &--expanded {
+      background-image: url("../images/icon-close.svg");
+    }
   }
 }
 
@@ -111,6 +133,7 @@ header {
   padding-right: 28px;
   text-align: center;
   display: flex;
+  justify-content: center;
   align-items: center;
 
   h2 {
@@ -118,28 +141,28 @@ header {
   }
 }
 
-h1,
-h2,
-h3,
-h4 {
-  color: map.get($neutral-colors, "dark-blue");
-  font-weight: map.get($font-weights, "bold");
+.mainDiv {
+  background-image: url("../images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: 186% -2%;
 }
 
 main {
   img {
-    width: 100vw;
+    width: 95vw;
+    max-width: 450px;
   }
   text-align: center;
   p {
     padding: 20px;
     line-height: 1.5;
   }
-  // background-repeat: no-repeat;
-  // background-image: url("../images/bg-tablet-pattern.svg");
-  // background-size: 90%;
-  // background-position: 600% bottom;
-  // height: 450px;
+  background-image: url("../images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 215% 92%;
+  height: 90vh;
 }
 
 .differences-section {
@@ -197,17 +220,16 @@ main {
   overflow: hidden;
   text-align: center;
   ul {
-    display: flex;
-    width: 400vw;
+    width: auto;
     padding-top: 70px;
     .card {
-      min-width: 90vw;
-      background-color: map.get($neutral-colors, "light-gray");
       text-align: center;
-      margin: 24px;
       padding: 24px;
-      position: relative;
-
+      &__inner {
+        background-color: map.get($neutral-colors, "light-gray");
+        padding: 24px;
+        position: relative;
+      }
       .card__title {
         margin: 26px;
         margin-top: 36px;
@@ -229,13 +251,15 @@ footer {
 
   .footer__inputBlock {
     display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 16px;
     input {
       @include radiusPadding;
       align-self: center;
       flex: 2;
+      min-width: 120px;
     }
-    padding-top: 30px;
-    padding-bottom: 30px;
   }
   .footer__nav {
     display: flex;

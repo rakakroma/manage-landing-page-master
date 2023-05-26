@@ -1,0 +1,13 @@
+.swiper-pagination {
+  position: static;
+}
+
+.swiper-pagination-bullet {
+  opacity: 1;
+  background-color: white;
+  outline: 1px solid orange;
+
+  &-active {
+    background-color: orange;
+  }
+}

@@ -1,4 +1,38 @@
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
+h1 {
+  font-size: 38px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: hsl(233, 12%, 13%);
+  font-weight: 700;
+}
+
+body {
+  font: 100% "Be Vietnam Pro", Helvetica, sans-serif;
+  color: hsl(227, 12%, 61%);
+}
+
+a {
+  text-decoration: none;
+}
+
 *,
 *:before,
 *:after {
@@ -107,13 +141,17 @@ input {
   border-radius: 0;
 }
 
-body {
-  font: 100% "Be Vietnam Pro", Helvetica, sans-serif;
-  color: hsl(227, 12%, 61%);
+.swiper-pagination {
+  position: static;
 }
 
-a {
-  text-decoration: none;
+.swiper-pagination-bullet {
+  opacity: 1;
+  background-color: white;
+  outline: 1px solid orange;
+}
+.swiper-pagination-bullet-active {
+  background-color: orange;
 }
 
 h1 {
@@ -125,11 +163,24 @@ h2 {
 }
 
 h3 {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 p {
   font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: hsl(233, 12%, 13%);
+  font-weight: 700;
+}
+
+body {
+  font: 100% "Be Vietnam Pro", Helvetica, sans-serif;
+  color: hsl(227, 12%, 61%);
 }
 
 .btn {
@@ -138,7 +189,10 @@ p {
   padding-right: 30px;
   padding-top: 12px;
   padding-bottom: 12px;
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
   font-weight: 700;
   border: none;
 }
@@ -151,21 +205,70 @@ p {
   background-color: white;
 }
 
-header {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  margin-left: 20px;
-  margin-right: 20px;
+.popup-background {
+  z-index: 100;
+  background: linear-gradient(0deg, rgb(45, 45, 45) 0%, rgb(122, 122, 122) 35%, rgb(221, 221, 221) 100%);
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  visibility: hidden;
+}
+.popup-background--active {
+  visibility: visible;
+}
+
+.header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
-header img {
+.header img {
   justify-self: center;
 }
-header nav {
+.header a {
+  color: hsl(228, 39%, 23%);
+  font-weight: 700;
+  font-size: 16px;
+}
+.header__nav {
   display: none;
 }
-header .nav-hamburger {
+.header .btn {
+  z-index: 150;
+}
+.header--expanded .header__nav {
+  display: flex;
+  background-color: white;
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100vw - 50px);
+  height: 40vh;
+  border-radius: 4px;
+  padding-top: 12px;
+  padding-bottom: 30px;
+  z-index: 200;
+}
+.header--expanded .header__nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header--expanded .header__nav .btn {
+  display: none;
+}
+.header--expanded .header__nav li {
+  margin-top: 2rem;
+}
+.header .nav-hamburger {
   border: none;
   background-color: initial;
   background-image: url("../images/icon-hamburger.svg");
@@ -173,6 +276,9 @@ header .nav-hamburger {
   height: 24px;
   background-repeat: no-repeat;
   background-size: contain;
+}
+.header .nav-hamburger--expanded {
+  background-image: url("../images/icon-close.svg");
 }
 
 .last-section {
@@ -185,25 +291,31 @@ header .nav-hamburger {
   padding-right: 28px;
   text-align: center;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 .last-section h2 {
   color: hsl(0, 0%, 98%);
 }
 
-h1,
-h2,
-h3,
-h4 {
-  color: hsl(233, 12%, 13%);
-  font-weight: 700;
+.mainDiv {
+  background-image: url("../images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: 186% -2%;
 }
 
 main {
   text-align: center;
+  background-image: url("../images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: 215% 92%;
+  height: 90vh;
 }
 main img {
-  width: 100vw;
+  width: 95vw;
+  max-width: 450px;
 }
 main p {
   padding: 20px;
@@ -256,15 +368,15 @@ main p {
   text-align: center;
 }
 .feedbackCardsSection ul {
-  display: flex;
-  width: 400vw;
+  width: auto;
   padding-top: 70px;
 }
 .feedbackCardsSection ul .card {
-  min-width: 90vw;
-  background-color: hsl(0, 0%, 98%);
   text-align: center;
-  margin: 24px;
+  padding: 24px;
+}
+.feedbackCardsSection ul .card__inner {
+  background-color: hsl(0, 0%, 98%);
   padding: 24px;
   position: relative;
 }
@@ -288,6 +400,7 @@ footer .footer__inputBlock {
   display: flex;
   padding-top: 30px;
   padding-bottom: 30px;
+  padding-left: 16px;
 }
 footer .footer__inputBlock input {
   border-radius: 20px;
@@ -297,6 +410,7 @@ footer .footer__inputBlock input {
   padding-bottom: 12px;
   align-self: center;
   flex: 2;
+  min-width: 120px;
 }
 footer .footer__nav {
   display: flex;

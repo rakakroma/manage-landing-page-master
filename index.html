@@ -7,40 +7,45 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="style.css">
+
 
   <title>Frontend Mentor | Manage landing page</title>
 </head>
 
 <body>
+  <div class="popup-background"></div>
+  <div class="mainDiv">
+    <header class="header">
+      <img class='logo' src="images/logo.svg" alt="manage">
+      <nav class="header__nav">
+        <ul>
+          <li><a href="">Pricing</a></li>
+          <li><a href="">Product</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">Careers</a></li>
+          <li><a href="">Community</a></li>
+        </ul>
+        <button class="btn btn--primary"> Get Started
+        </button>
+      </nav>
+      <button class="nav-hamburger"></button>
+    </header>
 
-  <header>
-    <img class='logo' src="images/logo.svg" alt="manage">
-    <nav>
-      <ul>
-        <li><a href="">Pricing</a></li>
-        <li><a href="">Product</a></li>
-        <li><a href="">About Us</a></li>
-        <li><a href="">Careers</a></li>
-        <li><a href="">Community</a></li>
-      </ul>
-      <button class="btn btn--primary"> Get Started
-      </button>
-    </nav>
-    <button class="nav-hamburger"></button>
-  </header>
-
-
-
-  <main>
-    <img alt="hero image" src="images/illustration-intro.svg">
-    <h1> Bring everyone together to build better products.</h1>
-
-    <p> Manage makes it simple for software teams to plan day-to-day
-      tasks while keeping the larger team goals in view.</p>
-
-    <button class="btn btn--primary">Get Started</button>
-  </main>
+    <main>
+      <img alt="hero image" src="images/illustration-intro.svg">
+      <h1> Bring everyone together to build better products.</h1>
+      <p> Manage makes it simple for software teams to plan day-to-day
+        tasks while keeping the larger team goals in view.</p>
+      <button class="btn btn--primary">Get Started</button>
+    </main>
+  </div>
 
 
   <section class="differences-section">
@@ -84,41 +89,52 @@
   </section>
   <section class="feedbackCardsSection">
     <h2>What they’ve said</h2>
-    <ul>
-      <div class="card">
-        <img class='avatar' src="images/avatar-anisha.png" alt="avatar of Anisha Li">
-        <h4 class="card__title">Anisha Li</h4>
-        <p>
-          “Manage has supercharged our team’s workflow. The ability to maintain
-          visibility on larger milestones at all times keeps everyone motivated.”
-        </p>
-      </div>
-      <div class="card">
-        <img class='avatar' src="images/avatar-ali.png" alt="avatar of Ali Bravo">
-        <h4 class="card__title">Ali Bravo</h4>
-        <p>
-          “We have been able to cancel so many other subscriptions since using
-          Manage. There is no more cross-channel confusion and everyone is much
-          more focused.”
-        </p>
-      </div>
-      <div class="card">
-        <img class='avatar' src="images/avatar-richard.png" alt="avatar of Richard Watts">
-        <h4 class="card__title">Richard Watts</h4>
-        <p>
-          “Manage allows us to provide structure and process. It keeps us organized
-          and focused. I can’t stop recommending them to everyone I talk to!”
-        </p>
-      </div>
-      <div class="card">
-        <img class='avatar' src="images/avatar-shanai.png" alt="avatar of Shanai Gough">
-        <h4 class="card__title">Shanai Gough</h4>
-        <p>
-          “Their software allows us to track, manage and collaborate on our projects
-          from anywhere. It keeps the whole team in-sync without being intrusive.”
-        </p>
-      </div>
-    </ul>
+    <div class="swiper-container">
+      <ul class="swiper-wrapper">
+        <div class="card swiper-slide">
+          <div class="card__inner">
+            <img class='avatar' src="images/avatar-anisha.png" alt="avatar of Anisha Li">
+            <h4 class="card__title">Anisha Li</h4>
+            <p>
+              “Manage has supercharged our team’s workflow. The ability to maintain
+              visibility on larger milestones at all times keeps everyone motivated.”
+            </p>
+          </div>
+        </div>
+        <div class="card swiper-slide">
+          <div class="card__inner">
+            <img class='avatar' src="images/avatar-ali.png" alt="avatar of Ali Bravo">
+            <h4 class="card__title">Ali Bravo</h4>
+            <p>
+              “We have been able to cancel so many other subscriptions since using
+              Manage. There is no more cross-channel confusion and everyone is much
+              more focused.”
+            </p>
+          </div>
+        </div>
+        <div class="card swiper-slide">
+          <div class="card__inner">
+            <img class='avatar' src="images/avatar-richard.png" alt="avatar of Richard Watts">
+            <h4 class="card__title">Richard Watts</h4>
+            <p>
+              “Manage allows us to provide structure and process. It keeps us organized
+              and focused. I can’t stop recommending them to everyone I talk to!”
+            </p>
+          </div>
+        </div>
+        <div class="card swiper-slide">
+          <div class="card__inner">
+            <img class='avatar' src="images/avatar-shanai.png" alt="avatar of Shanai Gough">
+            <h4 class="card__title">Shanai Gough</h4>
+            <p>
+              “Their software allows us to track, manage and collaborate on our projects
+              from anywhere. It keeps the whole team in-sync without being intrusive.”
+            </p>
+          </div>
+        </div>
+      </ul>
+      <div class="swiper-pagination"></div>
+    </div>
     <button class="btn btn--primary">Get Started</button>
   </section>
 
@@ -184,5 +200,9 @@
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </body>
+
+<script src="js/nav-hamburger.js">
+</script>
+<script src="js/carousel.js"></script>
 
 </html>
