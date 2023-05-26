@@ -1,0 +1,29 @@
+.feedbackCardsSection {
+  width: 100vw;
+  overflow: hidden;
+  text-align: center;
+  ul {
+    width: auto;
+    padding-top: 70px;
+    .card {
+      text-align: center;
+      padding: 24px;
+      &__inner {
+        background-color: map.get($neutral-colors, "light-gray");
+        padding: 24px;
+        position: relative;
+      }
+      .card__title {
+        margin: 26px;
+        margin-top: 36px;
+      }
+      .avatar {
+        width: 80px;
+        position: absolute;
+        top: -50%;
+        left: 50%;
+        transform: translate(-50%, 90%);
+      }
+    }
+  }
+}

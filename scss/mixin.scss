@@ -1,0 +1,14 @@
+$border-radius: 20px;
+
+@mixin radiusPadding {
+  border-radius: $border-radius;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+@mixin horizontalMargin {
+  margin: 0 auto;
+  max-width: min(95vw, 1100px);
+}

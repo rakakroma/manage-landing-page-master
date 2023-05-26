@@ -1,0 +1,110 @@
+.footer {
+  background-color: map.get($neutral-colors, "dark-blue");
+  text-align: center;
+
+  .footer__inputBlock {
+    display: flex;
+    input {
+      @include radiusPadding;
+      align-self: center;
+      flex: 2;
+      min-width: 120px;
+    }
+  }
+  .footer__nav {
+    display: flex;
+    text-align: left;
+    padding: 0 24px;
+  }
+  .footer__anchorList {
+    flex: 1;
+    li {
+      margin: 12px;
+    }
+    a {
+      color: white;
+      font-size: 14px;
+    }
+  }
+  .logo {
+    margin-top: 12px;
+    .logo__text {
+      fill: map.get($neutral-colors, "light-gray");
+    }
+  }
+  .footer__copyrightInfo {
+    font-size: 12px;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .socialMediaList {
+    display: flex;
+    justify-content: space-between;
+    @include mobile {
+      margin: 24px;
+      .socialMediaList__siteIcon {
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
+  @include desktop {
+    &__inner {
+      @include horizontalMargin;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      height: 280px;
+    }
+    &__copyrightInfo--mobile {
+      display: none;
+    }
+    &__copyrightInfo--desktop {
+      display: block;
+      font-size: 12px;
+      text-align: right;
+      padding-right: 12px;
+    }
+    &__shareAndLogo {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: center;
+      margin: 20px 0;
+
+      .logo {
+        margin-bottom: 70px;
+      }
+
+      .socialMediaList {
+        width: 160px;
+      }
+    }
+    &__nav {
+      align-items: center;
+      width: 450px;
+    }
+    &__inputBlockContainer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+    }
+    &__inputBlock {
+      .btn {
+        align-self: center;
+      }
+      margin-bottom: 30px;
+    }
+  }
+
+  @include mobile {
+    .footer__copyrightInfo--desktop {
+      display: none;
+    }
+    &__inputBlock {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-left: 16px;
+    }
+  }
+}

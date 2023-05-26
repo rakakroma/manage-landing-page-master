@@ -1,0 +1,32 @@
+.lastSection {
+  background-color: map.get($primary-colors, "red");
+  padding-left: 28px;
+  padding-right: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mobile {
+    background-image: url("../images/bg-simplify-section-mobile.svg");
+    background-position: left center;
+    background-repeat: no-repeat;
+    height: 400px;
+    text-align: center;
+  }
+  @include desktop {
+    height: 200px;
+    div {
+      @include horizontalMargin;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+    h2 {
+      width: 400px;
+    }
+  }
+
+  h2 {
+    color: map.get($neutral-colors, "light-gray");
+  }
+}

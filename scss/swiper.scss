@@ -3,7 +3,12 @@
 }
 
 .swiper-pagination-bullet {
-  opacity: 1;
+  @include desktop {
+    display: none;
+  }
+  @include mobile {
+    opacity: 1;
+  }
   background-color: white;
   outline: 1px solid orange;
 

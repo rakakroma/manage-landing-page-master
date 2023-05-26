@@ -1,0 +1,22 @@
+$red: map.get($primary-colors, "red");
+
+.btn {
+  @include radiusPadding;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
+  font-weight: map.get($font-weights, "bold");
+  border: none;
+
+  &--primary {
+    color: map.get($neutral-colors, "light-gray");
+    background-color: $red;
+  }
+  &--secondary {
+    color: map.get($primary-colors, "red");
+    background-color: white;
+  }
+
+  filter: drop-shadow(0px 6px 5px color.scale($red, $alpha: -60%));
+}
