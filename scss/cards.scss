@@ -1,7 +1,14 @@
 .feedbackCardsSection {
   width: 100vw;
+  height: 550px;
   overflow: hidden;
   text-align: center;
+  @include mobile {
+    margin-top: 60px;
+    .feedbackCardsSection__startButton {
+      margin-top: 45px;
+    }
+  }
   ul {
     width: auto;
     padding-top: 70px;
@@ -10,19 +17,24 @@
       padding: 24px;
       &__inner {
         background-color: map.get($neutral-colors, "light-gray");
-        padding: 24px;
+        padding: 20px;
         position: relative;
       }
       .card__title {
         margin: 26px;
-        margin-top: 36px;
+        margin-top: 45px;
+        font-weight: map.get($font-weights, "bold");
+        color: map.get($primary-colors, "blue");
       }
       .avatar {
-        width: 80px;
+        width: 75px;
         position: absolute;
-        top: -50%;
+        top: -44%;
         left: 50%;
         transform: translate(-50%, 90%);
+      }
+      p {
+        line-height: 26px;
       }
     }
   }

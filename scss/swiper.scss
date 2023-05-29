@@ -1,5 +1,6 @@
 .swiper-pagination {
   position: static;
+  margin-top: 10px;
 }
 
 .swiper-pagination-bullet {
@@ -7,6 +8,8 @@
     display: none;
   }
   @include mobile {
+    width: 6px;
+    height: 6px;
     opacity: 1;
   }
   background-color: white;

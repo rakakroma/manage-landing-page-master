@@ -18,35 +18,51 @@
 @import "lastSection";
 @import "differencesSection";
 
-.mainDiv {
-  background-image: url("../images/bg-tablet-pattern.svg");
-  background-repeat: no-repeat;
-  @include mobile {
-    background-size: 90%;
-    background-position: 186% -2%;
+body {
+  overflow-x: hidden;
+  .tabletPatternImage--second,
+  .tabletPatternImage--first {
+    position: absolute;
+    z-index: -1;
   }
-
-  @include desktop {
-    background-size: 50%;
-    background-position: 111% 259%;
+  @include mobile {
+    .tabletPatternImage--first {
+      right: -33%;
+      top: -13%;
+      width: 118%;
+    }
+    .tabletPatternImage--second {
+      right: -71%;
+      top: 55%;
+      width: 400px;
+    }
   }
 }
 
 .main {
   @include mobile {
     height: 90vh;
-    img {
-      width: 95vw;
+    &__heroImage {
+      width: 92vw;
       max-width: 450px;
-    }
-    p {
-      padding: 20px;
+      transform: translateY(10px);
     }
 
-    background-image: url("../images/bg-tablet-pattern.svg");
-    background-repeat: no-repeat;
-    background-size: 70%;
-    background-position: 215% 92%;
+    &__content {
+      padding-top: 11px;
+    }
+    h1 {
+      line-height: 50px;
+      margin: 0 20px;
+    }
+    h3 {
+      padding-top: 5px;
+      padding-bottom: 13px;
+      line-height: 27px;
+      padding-left: 19px;
+      padding-right: 19px;
+      margin: 0 20px;
+    }
   }
   p {
     line-height: 1.5;
@@ -62,7 +78,10 @@
     align-items: center;
     justify-content: space-between;
 
-    img {
+    &__tabletPatternImage--mobile {
+      display: none;
+    }
+    &__heroImage {
       max-width: 500px;
       align-self: center;
     }

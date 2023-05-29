@@ -6,8 +6,8 @@
 $font-stack: "Be Vietnam Pro", Helvetica, sans-serif;
 
 $font-sizes: (
-  "h1": 38px,
-  "h2": 32px,
+  "h1": 36px,
+  "h2": 30px,
   "h3": 16px,
   "text": 14px,
 );
@@ -35,10 +35,8 @@ p {
 }
 
 h1,
-h2,
-h3,
-h4 {
-  color: map.get($neutral-colors, "dark-blue");
+h2 {
+  color: map.get($primary-colors, "blue");
   font-weight: map.get($font-weights, "bold");
 }
 

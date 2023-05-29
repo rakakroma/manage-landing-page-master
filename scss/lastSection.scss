@@ -10,8 +10,15 @@
     background-image: url("../images/bg-simplify-section-mobile.svg");
     background-position: left center;
     background-repeat: no-repeat;
-    height: 400px;
+    height: 405px;
     text-align: center;
+    h1 {
+      transform: translateY(26px);
+      line-height: 50px;
+    }
+    .btn {
+      margin-top: 50px;
+    }
   }
   @include desktop {
     height: 200px;
@@ -21,12 +28,12 @@
       justify-content: space-between;
       width: 100%;
     }
-    h2 {
+    h1 {
       width: 400px;
     }
   }
 
-  h2 {
+  h1 {
     color: map.get($neutral-colors, "light-gray");
   }
 }

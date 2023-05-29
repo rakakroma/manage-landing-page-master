@@ -1,5 +1,5 @@
 .header {
-  padding-top: 30px;
+  padding-top: 40px;
   padding-bottom: 30px;
   padding-left: 20px;
   padding-right: 20px;
@@ -7,8 +7,10 @@
   justify-content: space-between;
   position: relative;
   width: 100%;
-  img {
+  .logo {
     align-self: center;
+    width: 110px;
+    margin-left: 4px;
   }
   a {
     color: map.get($primary-colors, "blue");
@@ -71,6 +73,7 @@
     @include desktop {
       display: none;
     }
+    margin-right: 4px;
     border: none;
     background-color: initial;
     background-image: url("../images/icon-hamburger.svg");

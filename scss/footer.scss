@@ -18,6 +18,7 @@
   }
   .footer__anchorList {
     flex: 1;
+    margin-left: 28px;
     li {
       margin: 12px;
     }
@@ -42,10 +43,10 @@
     display: flex;
     justify-content: space-between;
     @include mobile {
-      margin: 24px;
+      margin: 24px 40px;
       .socialMediaList__siteIcon {
-        width: 26px;
-        height: 26px;
+        width: 30px;
+        height: 30px;
       }
     }
   }
@@ -98,13 +99,25 @@
   }
 
   @include mobile {
+    height: 550px;
     .footer__copyrightInfo--desktop {
       display: none;
     }
     &__inputBlock {
-      padding-top: 30px;
+      padding-top: 33px;
       padding-bottom: 30px;
-      padding-left: 16px;
+      padding-left: 23px;
+      padding-right: 17px;
+    }
+    &__shareAndLogo {
+      margin-top: 45px;
+      .logo {
+        margin-top: 26px;
+      }
+    }
+    &__copyrightInfo--mobile {
+      margin-top: 50px;
+      font-size: 12px;
     }
   }
 }
