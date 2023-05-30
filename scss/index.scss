@@ -1,23 +1,27 @@
 @use "sass:map";
 @use "sass:color";
 
-@use "colorPalette" as *;
-@use "font" as *;
-@use "mixin" as *;
+@use "./core/colorPalette" as *;
+@use "./core/typography" as *;
+@use "./abstracts/mixin" as *;
 
-@import "reset";
-@import "mediaQuery";
-@import "swiper";
-@import "font";
-@import "popupBackground";
-@import "header";
-@import "footer";
-@import "mixin";
-@import "cards";
-@import "button";
-@import "lastSection";
-@import "./section/differencesSection";
-@import "main";
+@import "./core/typography";
+@import "./core/reset";
+
+@import "./abstracts/mediaQuery";
+@import "./abstracts/mixin";
+
+@import "./components/swiper";
+@import "./components/button";
+@import "./components/popupBackground";
+
+@import "./layout/header";
+@import "./layout/feedbackCardsSection";
+@import "./layout/lastSection";
+@import "./layout/differencesSection";
+@import "./layout/footer";
+@import "./layout/feedbackCardsSection";
+@import "./layout/main";
 
 body {
   overflow-x: hidden;
