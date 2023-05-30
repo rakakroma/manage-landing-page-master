@@ -5,8 +5,8 @@
 @use "./core/typography" as *;
 @use "./abstracts/mixin" as *;
 
-@import "./core/typography";
 @import "./core/reset";
+@import "./core/typography";
 
 @import "./abstracts/mediaQuery";
 @import "./abstracts/mixin";
@@ -16,7 +16,6 @@
 @import "./components/popupBackground";
 
 @import "./layout/header";
-@import "./layout/feedbackCardsSection";
 @import "./layout/lastSection";
 @import "./layout/differencesSection";
 @import "./layout/footer";
@@ -44,4 +43,7 @@ body {
 
 a:hover {
   color: map.get($neutral-colors, "grayish-blue");
+}
+
+@include desktop {
 }

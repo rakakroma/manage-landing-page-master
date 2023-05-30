@@ -154,10 +154,11 @@
   <footer class="footer">
     <div class="footer__inner">
       <div class="footer__inputBlockContainer">
-        <div class="footer__inputBlock">
-          <input type="text" placeholder="Updates in your inbox…" aria-label="type your e-mail for getting updates">
+        <form class="footer__inputBlock" id="footer__emailForm">
+          <input class='footer__emailInput' type="email" required placeholder="Updates in your inbox…"
+            aria-label="type your e-mail for getting updates">
           <button class="btn btn--primary">Go</button>
-        </div>
+        </form>
         <small class="footer__copyrightInfo--desktop">Copyright 2020. All Rights Reserved</small>
       </div>
       <nav class="footer__nav">

@@ -4,9 +4,9 @@
 }
 
 .swiper-pagination-bullet {
-  @include desktop {
-    display: none;
-  }
+  // @include desktop {
+  //   display: none;
+  // }
   @include mobile {
     width: 6px;
     height: 6px;

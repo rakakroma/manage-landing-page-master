@@ -9,6 +9,32 @@
     .btn {
       margin-top: 0;
     }
+
+    .horizontal-scroll-container {
+      padding-top: 80px;
+      margin-bottom: 26px;
+      display: flex;
+      overflow-x: scroll;
+      height: 350px;
+      width: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .card {
+      padding: 24px 10px;
+    }
+    .card__inner {
+      padding: 20px 0;
+      min-width: 540px;
+      p {
+        text-align: center;
+        padding: 0 32px;
+      }
+    }
   }
   @include mobile {
     // margin-top: 60px;
@@ -16,6 +42,42 @@
     height: 610px;
     .feedbackCardsSection__startButton {
       margin-top: 45px;
+    }
+    .card {
+      padding: 24px;
+    }
+    .card__inner {
+      padding: 20px;
+    }
+  }
+
+  .card {
+    text-align: center;
+    &__inner {
+      background-color: map.get($neutral-colors, "light-gray");
+      position: relative;
+    }
+    .card__title {
+      margin: 26px;
+      margin-top: 45px;
+      font-weight: map.get($font-weights, "bold");
+      color: map.get($primary-colors, "blue");
+    }
+    .avatar {
+      @include mobile {
+        width: 75px;
+      }
+      @include desktop {
+        width: 68px;
+      }
+
+      position: absolute;
+      top: -44%;
+      left: 50%;
+      transform: translate(-50%, 90%);
+    }
+    p {
+      line-height: 26px;
     }
   }
   .swiper-container {
@@ -25,37 +87,6 @@
     }
     @include desktop {
       padding-top: 85px;
-    }
-    .card {
-      text-align: center;
-      padding: 24px;
-      &__inner {
-        background-color: map.get($neutral-colors, "light-gray");
-        padding: 20px;
-        position: relative;
-      }
-      .card__title {
-        margin: 26px;
-        margin-top: 45px;
-        font-weight: map.get($font-weights, "bold");
-        color: map.get($primary-colors, "blue");
-      }
-      .avatar {
-        @include mobile {
-          width: 75px;
-        }
-        @include desktop {
-          width: 68px;
-        }
-
-        position: absolute;
-        top: -44%;
-        left: 50%;
-        transform: translate(-50%, 90%);
-      }
-      p {
-        line-height: 26px;
-      }
     }
   }
 }

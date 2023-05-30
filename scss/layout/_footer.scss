@@ -4,7 +4,7 @@
 
   .footer__inputBlock {
     display: flex;
-    input {
+    .footer__emailInput {
       @include radiusPadding;
       align-self: center;
       flex: 2;
@@ -134,7 +134,7 @@
       padding-bottom: 24px;
       padding-left: 23px;
       padding-right: 17px;
-      input {
+      .footer__emailInput {
         min-width: 120px;
       }
     }
