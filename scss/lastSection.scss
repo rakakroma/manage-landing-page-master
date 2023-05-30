@@ -36,12 +36,14 @@
       position: absolute;
       width: 100%;
       height: 100%;
+      z-index: 1;
     }
     .lastSection__inner {
       @include horizontalMargin;
       display: flex;
       justify-content: space-between;
       width: 100%;
+      z-index: 2;
     }
     .lastSection__title {
       width: 460px;
