@@ -267,6 +267,9 @@ input {
   color: hsl(12, 88%, 59%);
   background-color: white;
 }
+.btn--secondary:hover {
+  color: #f6866a;
+}
 .btn--secondary:active {
   background-color: #e6e6e6;
 }

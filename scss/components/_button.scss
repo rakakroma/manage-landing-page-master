@@ -1,5 +1,5 @@
 $red: map.get($primary-colors, "red");
-
+$light-gray: map.get($neutral-colors, "light-gray");
 .btn {
   @include radiusPadding;
   margin-top: 20px;
@@ -19,7 +19,7 @@ $red: map.get($primary-colors, "red");
     width: 135px;
   }
   &--primary {
-    color: map.get($neutral-colors, "light-gray");
+    color: $light-gray;
     background-color: $red;
 
     &:active {
@@ -27,8 +27,11 @@ $red: map.get($primary-colors, "red");
     }
   }
   &--secondary {
-    color: map.get($primary-colors, "red");
+    color: $red;
     background-color: white;
+    &:hover {
+      color: lighten($red, 10%);
+    }
     &:active {
       background-color: darken(white, 10%);
     }
