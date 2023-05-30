@@ -7,7 +7,7 @@
   align-items: center;
 
   @include mobile {
-    background-image: url("../images/bg-simplify-section-mobile.svg");
+    background-image: url("images/bg-simplify-section-mobile.svg");
     background-position: left center;
     background-repeat: no-repeat;
     height: 405px;
@@ -26,8 +26,8 @@
     height: 220px;
     &:after {
       content: "";
-      background-image: url("../images/bg-tablet-pattern.svg"),
-        url("../images/bg-tablet-pattern.svg");
+      background-image: url("images/bg-tablet-pattern.svg"),
+        url("images/bg-tablet-pattern.svg");
       background-repeat: no-repeat, no-repeat;
       background-position-x: 130%, 19%;
       background-position-y: 129%, 12%;

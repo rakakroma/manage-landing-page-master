@@ -328,7 +328,7 @@ body {
   margin-right: 4px;
   border: none;
   background-color: initial;
-  background-image: url("../images/icon-hamburger.svg");
+  background-image: url("images/icon-hamburger.svg");
   width: 24px;
   height: 24px;
   background-repeat: no-repeat;
@@ -341,7 +341,7 @@ body {
   }
 }
 .header .nav-hamburger--expanded {
-  background-image: url("../images/icon-close.svg");
+  background-image: url("images/icon-close.svg");
 }
 
 .footer {
@@ -613,7 +613,7 @@ body {
 }
 @media (max-width: 767px) {
   .lastSection {
-    background-image: url("../images/bg-simplify-section-mobile.svg");
+    background-image: url("images/bg-simplify-section-mobile.svg");
     background-position: left center;
     background-repeat: no-repeat;
     height: 405px;
@@ -635,7 +635,7 @@ body {
   }
   .lastSection:after {
     content: "";
-    background-image: url("../images/bg-tablet-pattern.svg"), url("../images/bg-tablet-pattern.svg");
+    background-image: url("images/bg-tablet-pattern.svg"), url("images/bg-tablet-pattern.svg");
     background-repeat: no-repeat, no-repeat;
     background-position-x: 130%, 19%;
     background-position-y: 129%, 12%;
@@ -873,7 +873,7 @@ body {
 
 body {
   overflow-x: hidden;
-  background-image: url("../images/bg-tablet-pattern.svg"), url("../images/bg-tablet-pattern.svg");
+  background-image: url("images/bg-tablet-pattern.svg"), url("images/bg-tablet-pattern.svg");
   background-repeat: no-repeat, no-repeat;
 }
 body .tabletPatternImage--second,
