@@ -22,6 +22,9 @@
     a {
       color: white;
       font-size: 14px;
+      &:hover {
+        color: map.get($neutral-colors, "grayish-blue");
+      }
     }
   }
   .logo {

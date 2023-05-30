@@ -694,6 +694,9 @@ input {
   color: white;
   font-size: 14px;
 }
+.footer .footer__anchorList a:hover {
+  color: hsl(227, 12%, 61%);
+}
 .footer .logo {
   margin-top: 12px;
 }
