@@ -8,7 +8,7 @@ const getSlidesPerView = () => {
   switch (true) {
     case viewportWidth >= 768:
       return 3;
-    case viewportWidth >= 550:
+    case viewportWidth >= 620:
       return 2;
     default:
       return 1;

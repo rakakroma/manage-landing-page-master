@@ -11,8 +11,9 @@
     }
   }
   @include mobile {
-    margin-top: 60px;
-    height: 550px;
+    // margin-top: 60px;
+    padding-top: 62px;
+    height: 610px;
     .feedbackCardsSection__startButton {
       margin-top: 45px;
     }

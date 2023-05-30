@@ -514,8 +514,8 @@ body {
 }
 @media (max-width: 767px) {
   .feedbackCardsSection {
-    margin-top: 60px;
-    height: 550px;
+    padding-top: 62px;
+    height: 610px;
   }
   .feedbackCardsSection .feedbackCardsSection__startButton {
     margin-top: 45px;
@@ -875,12 +875,6 @@ body {
   overflow-x: hidden;
   background-image: url("images/bg-tablet-pattern.svg"), url("images/bg-tablet-pattern.svg");
   background-repeat: no-repeat, no-repeat;
-}
-body .tabletPatternImage--second,
-body .tabletPatternImage--first {
-  position: absolute;
-  z-index: -1;
-  display: none;
 }
 @media (max-width: 767px) {
   body {
