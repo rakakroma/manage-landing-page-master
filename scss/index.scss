@@ -26,13 +26,6 @@ body {
     url("images/bg-tablet-pattern.svg");
   background-repeat: no-repeat, no-repeat;
 
-  .tabletPatternImage--second,
-  .tabletPatternImage--first {
-    position: absolute;
-    z-index: -1;
-    display: none;
-  }
-
   @include mobile {
     background-position-x: 100px, 240px;
     background-position-y: -100px, 430px;
