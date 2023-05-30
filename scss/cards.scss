@@ -1,17 +1,30 @@
 .feedbackCardsSection {
   width: 100vw;
-  height: 550px;
   overflow: hidden;
   text-align: center;
+
+  @include desktop {
+    margin-top: 16px;
+    height: 646px;
+    .btn {
+      margin-top: 0;
+    }
+  }
   @include mobile {
     margin-top: 60px;
+    height: 550px;
     .feedbackCardsSection__startButton {
       margin-top: 45px;
     }
   }
-  ul {
+  .swiper-container {
     width: auto;
-    padding-top: 70px;
+    @include mobile {
+      padding-top: 70px;
+    }
+    @include desktop {
+      padding-top: 85px;
+    }
     .card {
       text-align: center;
       padding: 24px;
@@ -27,7 +40,13 @@
         color: map.get($primary-colors, "blue");
       }
       .avatar {
-        width: 75px;
+        @include mobile {
+          width: 75px;
+        }
+        @include desktop {
+          width: 68px;
+        }
+
         position: absolute;
         top: -44%;
         left: 50%;

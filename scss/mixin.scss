@@ -1,14 +1,22 @@
-$border-radius: 20px;
+@import "mediaQuery";
+
+$border-radius: 60px;
 
 @mixin radiusPadding {
   border-radius: $border-radius;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  @include mobile {
+    padding: 15px 32px;
+  }
+  @include desktop {
+    padding: 14px 24px;
+  }
+  // padding-left: 24px;
+  // padding-right: 24px;
+  // padding-top: 12px;
+  // padding-bottom: 12px;
 }
 
 @mixin horizontalMargin {
   margin: 0 auto;
-  max-width: min(95vw, 1100px);
+  max-width: min(95vw, 1150px);
 }

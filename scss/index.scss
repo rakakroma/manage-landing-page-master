@@ -1,0 +1,46 @@
+@use "sass:map";
+@use "sass:color";
+
+@use "colorPalette" as *;
+@use "font" as *;
+@use "mixin" as *;
+
+@import "reset";
+@import "mediaQuery";
+@import "swiper";
+@import "font";
+@import "popupBackground";
+@import "header";
+@import "footer";
+@import "mixin";
+@import "cards";
+@import "button";
+@import "lastSection";
+@import "./section/differencesSection";
+@import "main";
+
+body {
+  overflow-x: hidden;
+
+  background-image: url("../images/bg-tablet-pattern.svg"),
+    url("../images/bg-tablet-pattern.svg");
+  background-repeat: no-repeat, no-repeat;
+
+  .tabletPatternImage--second,
+  .tabletPatternImage--first {
+    position: absolute;
+    z-index: -1;
+    display: none;
+  }
+
+  @include mobile {
+    background-position-x: 100px, 240px;
+    background-position-y: -100px, 430px;
+    background-size: 120%, 100%;
+  }
+  @include desktop {
+    background-position-x: 117%, -81%;
+    background-position-y: -6%, 61%;
+    background-size: 821px, 815px;
+  }
+}

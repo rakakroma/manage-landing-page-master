@@ -15,18 +15,20 @@ const getSlidesPerView = () => {
   }
 };
 
-export const swiper = new Swiper(swiperContainer, {
-  slidesPerView: getSlidesPerView(),
-  spaceBetween: 10,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  // autoplay: {
-  //   delay: 4000, // Delay between slides in milliseconds
-  //   disableOnInteraction: false, // Allow user interaction to stop autoplay
-  // },
-});
+let swiper;
+
+const createSwiper = () => {
+  swiper = new Swiper(swiperContainer, {
+    slidesPerView: getSlidesPerView(),
+    spaceBetween: 10,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+};
+
+createSwiper();
 
 function debounce(func, delay = 200) {
   let timeoutId;
@@ -44,6 +46,7 @@ window.addEventListener(
     if ($(".header--expanded").length) {
       closeNavPopUp();
     }
+
     swiper.params.slidesPerView = getSlidesPerView();
     swiper.update();
   })

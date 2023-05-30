@@ -2,14 +2,24 @@
 @use "colorPalette" as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap");
+@import "mediaQuery";
 
 $font-stack: "Be Vietnam Pro", Helvetica, sans-serif;
 
-$font-sizes: (
+$font-sizes--desktop: (
+  "h1": 52px,
+  "h2": 37px,
+  "h3": 16px,
+  "text": 16px,
+  "small": 12px,
+);
+
+$font-sizes--mobile: (
   "h1": 36px,
-  "h2": 30px,
+  "h2": 28px,
   "h3": 16px,
   "text": 14px,
+  "small": 12px,
 );
 
 $font-weights: (
@@ -20,18 +30,42 @@ $font-weights: (
 
 // default font and color
 
-h1 {
-  font-size: map.get($font-sizes, "h1");
-}
-h2 {
-  font-size: map.get($font-sizes, "h2");
+@include mobile {
+  h1 {
+    font-size: map.get($font-sizes--mobile, "h1");
+  }
+  h2 {
+    font-size: map.get($font-sizes--mobile, "h2");
+  }
+
+  h3 {
+    font-size: map.get($font-sizes--mobile, "h3");
+  }
+  p {
+    font-size: map.get($font-sizes--mobile, "text");
+  }
+  small {
+    font-size: map.get($font-sizes--mobile, "small");
+  }
 }
 
-h3 {
-  font-size: map.get($font-sizes, "h3");
-}
-p {
-  font-size: map.get($font-sizes, "text");
+@include desktop {
+  h1 {
+    font-size: map.get($font-sizes--desktop, "h1");
+  }
+  h2 {
+    font-size: map.get($font-sizes--desktop, "h2");
+  }
+
+  h3 {
+    font-size: map.get($font-sizes--desktop, "h3");
+  }
+  p {
+    font-size: map.get($font-sizes--desktop, "text");
+  }
+  small {
+    font-size: map.get($font-sizes--desktop, "small");
+  }
 }
 
 h1,

@@ -1,8 +1,5 @@
 .header {
-  padding-top: 40px;
   padding-bottom: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -15,10 +12,21 @@
   a {
     color: map.get($primary-colors, "blue");
     font-weight: map.get($font-weights, "bold");
-    font-size: map.get($font-sizes, "h3");
+    font-size: map.get($font-sizes--desktop, "h3");
   }
   @include desktop {
+    padding-top: 36px;
+    padding-left: 12px;
+    padding-right: 12px;
     @include horizontalMargin;
+    a {
+      font-weight: map.get($font-weights, "regular");
+      font-size: 12px;
+    }
+    .logo {
+      width: 150px;
+      transform: translateY(8px);
+    }
   }
 
   &__nav {
@@ -26,7 +34,7 @@
     @include desktop {
       display: flex;
       max-width: 55%;
-      width: 500px;
+      width: 400px;
       ul {
         display: flex;
         justify-content: space-between;
@@ -37,6 +45,10 @@
   }
 
   @include mobile {
+    padding-top: 42px;
+    padding-left: 20px;
+    padding-right: 20px;
+
     .btn {
       display: none;
     }
@@ -51,7 +63,7 @@
         left: 50%;
         transform: translateX(-50%);
         width: calc(100vw - 50px);
-        height: 40vh;
+        height: 38vh;
         border-radius: 4px;
         padding-top: 12px;
         padding-bottom: 30px;
@@ -81,6 +93,7 @@
     height: 24px;
     background-repeat: no-repeat;
     background-size: contain;
+    cursor: pointer;
 
     &--expanded {
       background-image: url("../images/icon-close.svg");

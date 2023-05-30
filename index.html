@@ -24,72 +24,70 @@
   <img class="tabletPatternImage--first" alt="" src="images/bg-tablet-pattern.svg">
   <img class="tabletPatternImage--second" alt="" src="images/bg-tablet-pattern.svg">
 
-  <div class="mainDiv">
-    <header class="header">
-      <img class='logo' src="images/logo.svg" alt="manage">
-      <nav class="header__nav">
-        <ul>
-          <li><a href="">Pricing</a></li>
-          <li><a href="">Product</a></li>
-          <li><a href="">About Us</a></li>
-          <li><a href="">Careers</a></li>
-          <li><a href="">Community</a></li>
-        </ul>
-      </nav>
-      <button class="btn btn--primary"> Get Started
-      </button>
+  <header class="header">
+    <img class='logo' src="images/logo.svg" alt="manage">
+    <nav class="header__nav">
+      <ul>
+        <li><a href="">Pricing</a></li>
+        <li><a href="">Product</a></li>
+        <li><a href="">About Us</a></li>
+        <li><a href="">Careers</a></li>
+        <li><a href="">Community</a></li>
+      </ul>
+    </nav>
+    <button class="btn btn--primary"> Get Started
+    </button>
 
-      <button class="nav-hamburger"></button>
-    </header>
+    <button class="nav-hamburger"></button>
+  </header>
 
 
-    <main class="main">
-      <img class='main__heroImage' alt="hero image" src="images/illustration-intro.svg">
-      <div class="main__content">
-        <h1> Bring everyone together to build better products.</h1>
-        <h3> Manage makes it simple for software teams to plan day-to-day
-          tasks while keeping the larger team goals in view.</h3>
-        <button class="btn btn--primary">Get Started</button>
-      </div>
-    </main>
-  </div>
+  <main class="main">
+    <img class='main__heroImage' alt="hero image" src="images/illustration-intro.svg">
+    <div class="main__content">
+      <h1 class="main__title"> Bring everyone together to build better products.</h1>
+      <h3 class="main__description"> Manage makes it simple for software teams to plan day-to-day
+        tasks while keeping the larger team goals in view.</h3>
+      <button class="btn btn--primary">Get Started</button>
+    </div>
+  </main>
 
 
   <section class="differencesSection">
     <div class="differencesSection__inner">
-      <div class="differencesSection__mainTitle">
-        <h2>What’s different about Manage?</h2>
+      <div class="differencesSection__mainTitleContainer">
+        <h2 class="differencesSection__mainTitle">What’s different about Manage?</h2>
 
-        <p>Manage provides all the functionality your team needs, without
+        <p class="differencesSection__mainDescription">Manage provides all the functionality your team needs, without
           the complexity. Our software is tailor-made for modern digital
           product teams.
         </p>
       </div>
       <ul>
         <li>
-          <div class="list__title">
+          <div class="list__titleBlock">
             <span class="list__number">01</span>
-            <h3>Track company-wide progress</h3>
+            <h3 class="list__title">Track company-wide progress</h3>
           </div>
-          <p>See how your day-to-day tasks fit into the wider vision. Go from
+          <p class="list_description">See how your day-to-day tasks fit into the wider vision. Go from
             tracking progress at the milestone level all the way done to the
             smallest of details. Never lose sight of the bigger picture again.</p>
         </li>
         <li>
-          <div class="list__title">
+          <div class="list__titleBlock">
             <span class="list__number">02</span>
-            <h3>Advanced built-in reports</h3>
+            <h3 class="list__title">Advanced built-in reports</h3>
           </div>
-          <p>Set internal delivery estimates and track progress toward company
+          <p class="list_description">Set internal delivery estimates and track progress toward company
             goals. Our customisable dashboard helps you build out the reports
             you need to keep key stakeholders informed.</p>
         </li>
         <li>
-          <div class="list__title">
+          <div class="list__titleBlock">
             <span class="list__number">03</span>
-            <h3>Everything you need in one place</h3>
+            <h3 class="list__title">Everything you need in one place</h3>
           </div>
-          <p>Stop jumping from one service to another to communicate, store files,
+          <p class="list_description">Stop jumping from one service to another to communicate, store files,
             track tasks and share documents. Manage offers an all-in-one team
             productivity solution.</p>
         </li>
@@ -98,9 +96,9 @@
   </section>
 
   <section class="feedbackCardsSection">
-    <h2>What they’ve said</h2>
+    <h2 class="feedbackCardsSection__mainTitle">What they’ve said</h2>
     <div class="swiper-container">
-      <ul class="swiper-wrapper">
+      <ul class="swiper-wrapper-element swiper-wrapper">
         <div class="card swiper-slide">
           <div class="card__inner">
             <img class='avatar' src="images/avatar-anisha.png" alt="avatar of Anisha Li">
@@ -149,8 +147,8 @@
   </section>
 
   <section class="lastSection">
-    <div>
-      <h1>Simplify how your team works today.</h1>
+    <div class="lastSection__inner">
+      <h2 class="lastSection__title">Simplify how your team works today.</h2>
       <button class="btn btn--secondary">Get Started</button>
     </div>
   </section>
@@ -162,19 +160,19 @@
           <input type="text" placeholder="Updates in your inbox…" aria-label="type your e-mail for getting updates">
           <button class="btn btn--primary">Go</button>
         </div>
-        <div class="footer__copyrightInfo--desktop">Copyright 2020. All Rights Reserved</div>
+        <small class="footer__copyrightInfo--desktop">Copyright 2020. All Rights Reserved</small>
       </div>
       <nav class="footer__nav">
-        <ul class="footer__anchorList">
-          <li><a href="">Home</a></li>
-          <li><a href="">Pricing</a></li>
-          <li><a href="">Products</a></li>
-          <li><a href="">About Us</a></li>
+        <ul class="footer__anchorList footer__anchorList--first">
+          <li class="footer__anchorListItem"><a href="">Home</a></li>
+          <li class="footer__anchorListItem"><a href="">Pricing</a></li>
+          <li class="footer__anchorListItem"><a href="">Products</a></li>
+          <li class="footer__anchorListItem"><a href="">About Us</a></li>
         </ul>
-        <ul class="footer__anchorList">
-          <li><a href="">Careers</a></li>
-          <li><a href="">Community</a></li>
-          <li><a href="">Privacy Policy</a></li>
+        <ul class="footer__anchorList footer__anchorList--second">
+          <li class="footer__anchorListItem"><a href="">Careers</a></li>
+          <li class="footer__anchorListItem"><a href="">Community</a></li>
+          <li class="footer__anchorListItem"><a href="">Privacy Policy</a></li>
         </ul>
       </nav>
 
@@ -207,7 +205,7 @@
         </svg>
       </div>
 
-      <div class="footer__copyrightInfo--mobile">Copyright 2020. All Rights Reserved</div>
+      <small class="footer__copyrightInfo--mobile">Copyright 2020. All Rights Reserved</small>
     </div>
   </footer>
 

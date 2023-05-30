@@ -9,6 +9,9 @@ $red: map.get($primary-colors, "red");
   font-weight: map.get($font-weights, "bold");
   border: none;
 
+  @include desktop {
+    width: 135px;
+  }
   &--primary {
     color: map.get($neutral-colors, "light-gray");
     background-color: $red;

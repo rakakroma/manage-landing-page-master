@@ -1,47 +1,6 @@
-@use "sass:map";
-@use "sass:color";
-
-@use "colorPalette" as *;
-@use "font" as *;
-@use "mixin" as *;
-
-@import "reset";
-@import "mediaQuery";
-@import "swiper";
-@import "font";
-@import "popupBackground";
-@import "header";
-@import "footer";
-@import "mixin";
-@import "cards";
-@import "button";
-@import "lastSection";
-@import "differencesSection";
-
-body {
-  overflow-x: hidden;
-  .tabletPatternImage--second,
-  .tabletPatternImage--first {
-    position: absolute;
-    z-index: -1;
-  }
-  @include mobile {
-    .tabletPatternImage--first {
-      right: -33%;
-      top: -13%;
-      width: 118%;
-    }
-    .tabletPatternImage--second {
-      right: -71%;
-      top: 55%;
-      width: 400px;
-    }
-  }
-}
-
 .main {
   @include mobile {
-    height: 90vh;
+    height: 736px;
     &__heroImage {
       width: 92vw;
       max-width: 450px;
@@ -49,15 +8,15 @@ body {
     }
 
     &__content {
-      padding-top: 11px;
+      padding-top: 12px;
     }
     h1 {
       line-height: 50px;
       margin: 0 20px;
     }
     h3 {
-      padding-top: 5px;
-      padding-bottom: 13px;
+      padding-top: 4px;
+      padding-bottom: 9px;
       line-height: 27px;
       padding-left: 19px;
       padding-right: 19px;
@@ -71,7 +30,7 @@ body {
   @include desktop {
     @include horizontalMargin;
     padding: 0 16px;
-    margin-top: 20px;
+    margin-top: 50px;
     margin-bottom: 20px;
     display: flex;
     flex-direction: row-reverse;
@@ -82,12 +41,26 @@ body {
       display: none;
     }
     &__heroImage {
-      max-width: 500px;
+      margin-right: 12px;
+      margin-top: 10px;
+      // max-width: 600px;
+      max-width: 60vw;
       align-self: center;
+      transform: translateX(30px);
     }
     &__content {
-      max-width: 400px;
+      max-width: 500px;
       text-align: start;
+      padding-left: 2px;
+      padding-top: 18px;
+      // transform: translateY(20px);
+      .main__description {
+        margin-top: 26px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        width: 70%;
+        line-height: 1.8;
+      }
       p {
         width: 85%;
         padding: 12px;

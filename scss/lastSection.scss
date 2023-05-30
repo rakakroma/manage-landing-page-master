@@ -12,7 +12,8 @@
     background-repeat: no-repeat;
     height: 405px;
     text-align: center;
-    h1 {
+    .lastSection__title {
+      font-size: map.get($font-sizes--mobile, "h1");
       transform: translateY(26px);
       line-height: 50px;
     }
@@ -21,19 +22,39 @@
     }
   }
   @include desktop {
-    height: 200px;
-    div {
+    position: relative;
+    height: 220px;
+    &:after {
+      content: "";
+      background-image: url("../images/bg-tablet-pattern.svg"),
+        url("../images/bg-tablet-pattern.svg");
+      background-repeat: no-repeat, no-repeat;
+      background-position-x: 130%, 19%;
+      background-position-y: 129%, 12%;
+      background-size: 500px, 570px;
+      opacity: 0.1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .lastSection__inner {
       @include horizontalMargin;
       display: flex;
       justify-content: space-between;
       width: 100%;
     }
-    h1 {
-      width: 400px;
+    .lastSection__title {
+      width: 460px;
+      padding-left: 18px;
+      padding-top: 2px;
+    }
+    .btn {
+      height: 43px;
+      transform: translate(-10px, 7px);
     }
   }
 
-  h1 {
+  .lastSection__title {
     color: map.get($neutral-colors, "light-gray");
   }
 }
